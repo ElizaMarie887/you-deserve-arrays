@@ -1,11 +1,16 @@
 const prompt = require('prompt-sync')({sigint: true});
 
-inputArray = JSON.parse(prompt("Enter an array: "));
+/*
+prompt user for an array
+typeof to figure out if first item is a number
+use a boolean to print out if this is true or not
+*/
 
-let firstArrayItem = inputArray [0]
-let bool = true
-let num = typeof firstArrayItem
+let inputArray = JSON.parse(prompt("Enter an array: "));
+let bool = false;
 
-if(num = Number){
-    console.log(`It's ${bool}, your first item is a number!`)
+if (!isNaN(inputArray[0])){
+    bool = true
 }
+
+console.log(bool)
